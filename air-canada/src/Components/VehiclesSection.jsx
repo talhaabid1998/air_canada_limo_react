@@ -56,16 +56,38 @@ export const Vehicles = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="swiper-container">
         <Swiper
           modules={[Navigation]} // Add the Navigation module here
           navigation // Enable navigation
-          spaceBetween={50}
-          slidesPerView={3}
+     
+          breakpoints={{
+            // when window width is >= 640px (sm)
+            500: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 768px (md)
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            // when window width is >= 1024px (lg)
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+          }}
+          loop={true}
           onSlideChange={(swiper) => {
             console.log("slide index:", swiper.realIndex);
           }}
           onSwiper={(swiper) => console.log("yes")}
+         
         >
           <SwiperSlide>
             <VehicleCard

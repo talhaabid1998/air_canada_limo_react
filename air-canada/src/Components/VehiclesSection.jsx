@@ -60,13 +60,12 @@ export const Vehicles = () => {
         <Swiper
           modules={[Navigation]} // Add the Navigation module here
           navigation // Enable navigation
-     
           breakpoints={{
             // when window width is >= 640px (sm)
             500: {
-                slidesPerView: 1,
-                spaceBetween: 20,
-              },
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
             640: {
               slidesPerView: 1,
               spaceBetween: 20,
@@ -87,7 +86,6 @@ export const Vehicles = () => {
             console.log("slide index:", swiper.realIndex);
           }}
           onSwiper={(swiper) => console.log("yes")}
-         
         >
           <SwiperSlide>
             <VehicleCard

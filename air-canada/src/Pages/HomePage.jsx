@@ -4,6 +4,8 @@ import { Navbar } from "../Components/NavBar";
 import { HeroSection } from "../Components/HeroSection";
 import { TechnologySection } from "../Components/TechnologySection";
 import { Vehicles } from "../Components/VehiclesSection";
+import ServicesSection from "../Components/ServicesSection";
+import AboutUsSection from "../Components/AboutUsSection";
 
 const HomePage = () => {
   return (
@@ -13,6 +15,8 @@ const HomePage = () => {
       <TechnologySection />
 
       <Vehicles />
+      <ServicesSection />
+      <AboutUsSection/>
     </div>
   );
 };

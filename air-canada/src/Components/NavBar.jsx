@@ -2,7 +2,7 @@ import { Close } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
-export const Navbar = () => {
+export const Navbar = ({ scrollToSection, refs }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -61,22 +61,64 @@ export const Navbar = () => {
               <Close className="h-6 w-6 text-black" />
             </button>
             <nav className="flex flex-col">
-              <a href="#" className="text-black py-2">
+              <a
+                href="#"
+                className="text-black py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(refs.homeRef);
+                }}
+              >
                 Home
               </a>
-              <a href="#" className="text-black py-2">
-                Cities
+              <a
+                href="#"
+                className="text-black py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(refs.citiesRef);
+                }}
+              >
+              Technology
               </a>
-              <a href="#" className="text-black py-2">
+              <a
+                href="#"
+                className="text-black py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(refs.vehiclesRef);
+                }}
+              >
                 Vehicles
               </a>
-              <a href="#" className="text-black py-2">
+              <a
+                href="#"
+                className="text-black py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(refs.servicesRef);
+                }}
+              >
                 Services
               </a>
-              <a href="#" className="text-black py-2">
+              <a
+                href="#"
+                className="text-black py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(refs.aboutRef);
+                }}
+              >
                 About
               </a>
-              <a href="#" className="text-black py-2">
+              <a
+                href="#"
+                className="text-black py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(refs.contactRef);
+                }}
+              >
                 Contact
               </a>
             </nav>
@@ -89,17 +131,78 @@ export const Navbar = () => {
             isScrolled ? "text-black" : "text-white"
           }`}
         >
-          {links.map((link) => (
-            <a
-              key={link}
-              href="#"
-              className={`hover:text-gray-300 ${
-                isScrolled ? "" : "hover:text-gray-300"
-              }`}
-            >
-              {link}
-            </a>
-          ))}
+          <a
+            href="#"
+            className={`hover:text-gray-300 ${
+              isScrolled ? "" : "hover:text-gray-300"
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(refs.homeRef);
+            }}
+          >
+            Home
+          </a>
+          <a
+            href="#"
+            className={`hover:text-gray-300 ${
+              isScrolled ? "" : "hover:text-gray-300"
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(refs.citiesRef);
+            }}
+          >
+           Technology
+          </a>
+          <a
+            href="#"
+            className={`hover:text-gray-300 ${
+              isScrolled ? "" : "hover:text-gray-300"
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(refs.vehiclesRef);
+            }}
+          >
+            Vehicles
+          </a>
+          <a
+            href="#"
+            className={`hover:text-gray-300 ${
+              isScrolled ? "" : "hover:text-gray-300"
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(refs.servicesRef);
+            }}
+          >
+            Services
+          </a>
+          <a
+            href="#"
+            className={`hover:text-gray-300 ${
+              isScrolled ? "" : "hover:text-gray-300"
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(refs.aboutRef);
+            }}
+          >
+            About
+          </a>
+          <a
+            href="#"
+            className={`hover:text-gray-300 ${
+              isScrolled ? "" : "hover:text-gray-300"
+            }`}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(refs.contactRef);
+            }}
+          >
+            Contact
+          </a>
         </nav>
 
         <button className="btn btn-error text-white py-1 px-6 hidden md:block">

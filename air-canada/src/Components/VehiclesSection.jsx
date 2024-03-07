@@ -1,5 +1,11 @@
 import Sedanimg from "../assets/sedan.jpg";
 import Suvimg from "../assets/suv.jpg";
+import Mercedes_van from "../assets/mercedes_van.jpeg";
+import Esclade from "../assets/esclade.jpeg";
+import Navigator from "../assets/navigator_luxury_suv.jpeg";
+import Mercedes_s_class from "../assets/mercedes_s_class.jpeg";
+import Contenental from "../assets/contenental.jpeg";
+import Luxury_sedan_s_class from "../assets/luxury_sedan_s_class.jpeg";
 import Vanimg from "../assets/van.jpg";
 import miniimg from "../assets/mini.png";
 import Busimg from "../assets/bus.jpg";
@@ -92,47 +98,47 @@ export const Vehicles = () => {
               title="LUXURY SEDAN"
               passengers="2"
               description="Traveling in our elegant sedans, two passengers experience the epitome of comfort and style, embodying our commitment to providing impeccable chauffeur services."
-              imgSrc={Sedanimg}
+              imgSrc={Luxury_sedan_s_class}
             />
           </SwiperSlide>
           <SwiperSlide>
             <VehicleCard
-              title="LUXURY SUV"
-              passengers="6"
-              description="In our spacious SUVs, accommodating up to six passengers, travelers enjoy a luxurious journey that seamlessly combines comfort and sophistication, reflecting our dedication to exceptional chauffeur services."
-              imgSrc={Suvimg}
+              title="CONTINENTAL"
+              passengers="2"
+              description="In our versatile vans designed for up to 2 passengers, travelers embark on a journey that harmonizes spaciousness with luxury, exemplifying our unwavering commitment to delivering exceptional chauffeur services."
+              imgSrc={Contenental}
             />
           </SwiperSlide>
           <SwiperSlide>
             <VehicleCard
-              title="LUXURY VAN"
+              title="MERCEDES S CLASS"
+              passengers="2"
+              description="Indulge in unmatched comfort and luxury with our 2-passenger Mini Coach, as we, Toronto's foremost chauffeur service, craft your journey to perfection."
+              imgSrc={Mercedes_s_class}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <VehicleCard
+              title="NAVIGATOR"
+              passengers="6-7"
+              description="Set out on an extraordinary journey aboard our 6 to 7-passenger bus, as we, Toronto's foremost chauffeur service, guarantee your voyage is marked by unparalleled comfort and luxury, meticulously tailored to perfection."
+              imgSrc={Navigator}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <VehicleCard
+              title="MERCEDES VAN"
               passengers="14"
-              description="In our versatile vans designed for up to 14 passengers, travelers embark on a journey that harmonizes spaciousness with luxury, exemplifying our unwavering commitment to delivering exceptional chauffeur services."
-              imgSrc={Vanimg}
+              description="Indulge in unmatched comfort and luxury with our 14-passenger Mini Coach, as we, Toronto's foremost chauffeur service, craft your journey to perfection."
+              imgSrc={Mercedes_van}
             />
           </SwiperSlide>
           <SwiperSlide>
             <VehicleCard
-              title="MINI VAN"
-              passengers="18"
-              description="Indulge in unmatched comfort and luxury with our 24-passenger Mini Coach, as we, Toronto's foremost chauffeur service, craft your journey to perfection."
-              imgSrc={miniimg}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <VehicleCard
-              title="BUS"
-              passengers="55"
-              description="Set out on an extraordinary journey aboard our 55-passenger bus, as we, Toronto's foremost chauffeur service, guarantee your voyage is marked by unparalleled comfort and luxury, meticulously tailored to perfection."
-              imgSrc={Busimg}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <VehicleCard
-              title="MINI COACH"
-              passengers="14"
-              description="Indulge in unmatched comfort and luxury with our 24-passenger Mini Coach, as we, Toronto's foremost chauffeur service, craft your journey to perfection."
-              imgSrc={Vanimg}
+              title="CADILLAC ESCALADE"
+              passengers="6-7"
+              description="Indulge in unmatched comfort and luxury with our 6 to 7-passenger Mini Coach, as we, Toronto's foremost chauffeur service, craft your journey to perfection."
+              imgSrc={Esclade}
             />
           </SwiperSlide>
           {/* Repeat SwiperSlide for additional vehicles */}

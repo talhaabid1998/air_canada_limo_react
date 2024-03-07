@@ -54,22 +54,22 @@ function ServicesSection() {
   ];
 
   return (
-    <div className="bg-white py-16">
+    <div className="bg-[#757778] py-16">
       <div className="max-w-full  px-6 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-center item-center mb-10">
           <div className="flex items-center justify-center my-8">
             <div
-              className="bg-red-500 inline-block"
+              className="bg-[#f2b56b] inline-block"
               style={{ width: "50px", height: "2px" }}
             ></div>
-            <h2 className="mx-4 text-3xl font-bold text-gray-800">Services</h2>
+            <h2 className="mx-4 text-3xl font-bold text-[#f2b56b]">Services</h2>
             <div
-              className="bg-red-500 inline-block"
+              className="bg-[#f2b56b] inline-block"
               style={{ width: "50px", height: "2px" }}
             ></div>
           </div>
           <div>
-            <p className="text-center ">
+            <p className="text-center text-white ">
               With a diverse array of vehicles in our fleet, we possess the
               capacity to deliver the most comprehensive solutions, all while
               maintaining the utmost professionalism.
@@ -82,7 +82,7 @@ function ServicesSection() {
             {services.map((service) => (
                 
               <li key={service.id} className=" relative mt-10 md:mt-0 border-t-4 border-gray-100 p-4   py-8">
-                <div className="absolute top-[-4px] left-0 h-1 w-4 bg-red-500 "></div>
+                <div className="absolute top-[-4px] left-0 h-1 w-4 bg-[#f2b56b] "></div>
                 <div className="flex gap-2">
                   <div className="flex">
                     <div className="flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
@@ -91,10 +91,10 @@ function ServicesSection() {
                     </div>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-lg leading-6 font-bold text-gray-700">
+                    <h3 className="text-lg leading-6 font-bold text-[#f2b56b]">
                       {service.name}
                     </h3>
-                    <p className="mt-2 text-base leading-6 ">
+                    <p className="mt-2 text-white leading-6 ">
                       {service.description}
                     </p>
                   </div>

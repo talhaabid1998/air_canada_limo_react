@@ -1,6 +1,7 @@
 import { Close } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import sideLogo from "../assets/sidelogo.jpeg";
 
 export const Navbar = ({ scrollToSection, refs }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,17 +30,19 @@ export const Navbar = ({ scrollToSection, refs }) => {
   return (
     <>
       <div
-        className={`py-8 px-4 fixed top-0 w-full z-50 flex items-center justify-between transition-colors duration-300 ${
-          isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        className={`py-8 px-4 fixed top-0 w-full z-50 flex items-center justify-between  transition-colors duration-300 ${
+          isScrolled ? "bg-black shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="text-white">Usama</div>
+        <div>
+          <img className="h-20" src={sideLogo}></img>
+        </div>
 
         {/* Hamburger Icon */}
         <div className="md:hidden flex items-center gap-2">
-          <button className="btn btn-error text-white py-1 px-6">
+          {/* <button className="btn btn-error text-white py-1 px-6">
             My Trips
-          </button>
+          </button> */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
               <MenuOutlinedIcon className="block h-6 w-6 text-white" />
@@ -79,7 +82,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
                   scrollToSection(refs.citiesRef);
                 }}
               >
-              Technology
+                Technology
               </a>
               <a
                 href="#"
@@ -127,8 +130,8 @@ export const Navbar = ({ scrollToSection, refs }) => {
 
         {/* Links for larger screens */}
         <nav
-          className={`hidden md:flex space-x-4 ${
-            isScrolled ? "text-black" : "text-white"
+          className={`hidden md:flex space-x-4 justify-center flex-1 ${
+            isScrolled ? "text-[#f2b56b] text-lg" : "text-white"
           }`}
         >
           <a
@@ -153,7 +156,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
               scrollToSection(refs.citiesRef);
             }}
           >
-           Technology
+            Technology
           </a>
           <a
             href="#"
@@ -205,9 +208,9 @@ export const Navbar = ({ scrollToSection, refs }) => {
           </a>
         </nav>
 
-        <button className="btn btn-error text-white py-1 px-6 hidden md:block">
+        {/* <button className="btn btn-error text-white py-1 px-6 hidden md:block">
           My Trips
-        </button>
+        </button> */}
       </div>
     </>
   );

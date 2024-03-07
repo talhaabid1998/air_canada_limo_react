@@ -25,9 +25,9 @@ const VehicleCard = (props) => {
         className="w-64 h-64 object-cover rounded-full shadow-lg"
       />
       <div className="mt-4 text-center">
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-gray-500">{passengers} Passengers</p>
-        <p className="mt-2 text-sm text-gray-700">{description}</p>
+        <h3 className="text-xl text-[#f2b56b] font-semibold">{title}</h3>
+        <p className="text-[#f2b56b]">{passengers} Passengers</p>
+        <p className="mt-2 text-sm text-white">{description}</p>
       </div>
     </div>
   );
@@ -35,21 +35,21 @@ const VehicleCard = (props) => {
 
 export const Vehicles = () => {
   return (
-    <div className="bg-gray-200 py-10 px-5">
+    <div className="bg-[#757778] py-10 px-5">
       <div className="flex flex-col justify-center item-center mb-10">
         <div className="flex items-center justify-center my-8">
           <div
-            className="bg-red-500 inline-block"
+            className="bg-[#f2b56b] inline-block"
             style={{ width: "50px", height: "2px" }}
           ></div>
-          <h2 className="mx-4 text-3xl font-bold text-gray-800">Vehicles</h2>
+          <h2 className="mx-4 text-3xl font-bold text-[#f2b56b]">Vehicles</h2>
           <div
-            className="bg-red-500 inline-block"
+            className="bg-[#f2b56b] inline-block"
             style={{ width: "50px", height: "2px" }}
           ></div>
         </div>
         <div>
-          <p className="text-center ">
+          <p className="text-center text-white">
             With a diverse array of vehicles in our fleet, we possess the
             capacity to deliver the most comprehensive solutions, all while
             maintaining the utmost professionalism.

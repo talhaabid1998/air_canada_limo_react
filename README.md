@@ -1,5 +1,3 @@
-# Api
-
 To start your server:
 
   * Run `npm install` to install and setup dependencies

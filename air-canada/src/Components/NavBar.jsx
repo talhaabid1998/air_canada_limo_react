@@ -30,8 +30,8 @@ export const Navbar = ({ scrollToSection, refs }) => {
   return (
     <>
       <div
-        className={`py-8 px-4 fixed top-0 w-full z-50 flex items-center justify-between  transition-colors duration-300 ${
-          isScrolled ? "bg-black shadow-md" : "bg-transparent"
+        className={`py-4 px-4 fixed top-0 w-full z-50 flex items-center justify-between  transition-colors duration-300 ${
+          isScrolled ? "bg-black shadow-md" : "bg-black "
         }`}
       >
         <div>
@@ -131,7 +131,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
         {/* Links for larger screens */}
         <nav
           className={`hidden md:flex space-x-4 justify-center flex-1 ${
-            isScrolled ? "text-[#f2b56b] text-lg" : "text-white"
+            isScrolled ? "text-[#f2b56b] text-lg" : "text-[#f2b56b] text-lg"
           }`}
         >
           <a

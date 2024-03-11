@@ -102,7 +102,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
                   scrollToSection(refs.servicesRef);
                 }}
               >
-                Services
+                Servicess
               </a>
               <a
                 href="#"

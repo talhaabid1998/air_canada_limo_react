@@ -23,7 +23,7 @@ export const HeroSection = () => {
         }}
       />
       {/* Background image */}
-      <img src={img} alt="Background" className=" w-full h-full " />
+      <img src={img} alt="Background" className=" w-screen h-screen " />
       {/* Content - adjust the top, left and padding for different screen sizes */}
       <div className="absolute z-20 top-1/2 right-4 md:right-10 lg:right-16 transform -translate-y-1/2 p-4 md:p-8">
         <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">

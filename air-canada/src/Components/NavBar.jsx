@@ -2,6 +2,23 @@ import { Close } from "@mui/icons-material";
 import React, { useState, useEffect } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import sideLogo from "../assets/sidelogo.jpeg";
+const Button = () => {
+  return (
+    <button className="hover:bg-[#f2b56b] border-[#f2b56b] text-orange-200 font-semibold py-2 px-4 border  rounded shadow bg-transparent hover:text-black">
+      <div className="flex items-center">
+        <svg
+          className="w-4 h-4 mr-2"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+        >
+          <path d="M2.93 17.07a10 10 0 1 1 14.14 0l-7.07-7.07-7.07 7.07z" />
+        </svg>
+        +1(123) 456 7890
+      </div>
+    </button>
+  );
+};
 
 export const Navbar = ({ scrollToSection, refs }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,19 +47,16 @@ export const Navbar = ({ scrollToSection, refs }) => {
   return (
     <>
       <div
-        className={`py-4 px-4 fixed top-0 w-full z-50 flex items-center justify-between  transition-colors duration-300 ${
-          isScrolled ? "bg-black shadow-md" : "bg-black "
+        className={`py-4 px-4 fixed top-0 w-full z-50 flex items-center justify-between gap-4  transition-colors duration-300 ${
+          isScrolled ? "bg-[#15162C] shadow-md" : "bg-[#15162C] "
         }`}
       >
-        <div>
+        <div className="md:pl-[230px]">
           <img className="h-20" src={sideLogo}></img>
         </div>
 
         {/* Hamburger Icon */}
         <div className="md:hidden flex items-center gap-2">
-          {/* <button className="btn btn-error text-white py-1 px-6">
-            My Trips
-          </button> */}
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
               <MenuOutlinedIcon className="block h-6 w-6 text-white" />
@@ -54,7 +68,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
 
         {/* Menu content */}
         <div
-          className={`fixed inset-0 bg-black bg-opacity-50 z-50 transform ${
+          className={`fixed inset-0 bg-[#15162C] bg-opacity-50 z-50 transform ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-in-out md:hidden`}
         >
@@ -130,25 +144,23 @@ export const Navbar = ({ scrollToSection, refs }) => {
 
         {/* Links for larger screens */}
         <nav
-          className={`hidden md:flex space-x-4 justify-center flex-1 ${
-            isScrolled ? "text-[#f2b56b] text-lg" : "text-[#f2b56b] text-lg"
+          className={`hidden md:flex space-x-4 gap-2 items-center justify-center mx-auto  ${
+            isScrolled ? "text-white text-lg" : "text-white text-lg"
           }`}
         >
+         <a
+  href="#"
+  className="py-2  border-t-2 border-b-2 border-[#f2b56b] hover:text-gray-300 transition-all duration-100 ease-in-out"
+  onClick={(e) => {
+    e.preventDefault();
+    scrollToSection(refs.homeRef);
+  }}
+>
+  Home
+</a>
           <a
             href="#"
-            className={`hover:text-gray-300 ${
-              isScrolled ? "" : "hover:text-gray-300"
-            }`}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection(refs.homeRef);
-            }}
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            className={`hover:text-gray-300 ${
+            className={`  py-2 hover:border-t-2 hover:border-b-2 border-[#f2b56b] hover:text-gray-300 transition-all duration-100 ease-in-out ${
               isScrolled ? "" : "hover:text-gray-300"
             }`}
             onClick={(e) => {
@@ -160,7 +172,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
           </a>
           <a
             href="#"
-            className={`hover:text-gray-300 ${
+            className={`  py-2 hover:border-t-2 hover:border-b-2 border-[#f2b56b] hover:text-gray-300 transition-all duration-100 ease-in-out ${
               isScrolled ? "" : "hover:text-gray-300"
             }`}
             onClick={(e) => {
@@ -172,7 +184,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
           </a>
           <a
             href="#"
-            className={`hover:text-gray-300 ${
+            className={`  py-2 hover:border-t-2 hover:border-b-2 border-[#f2b56b] hover:text-gray-300 transition-all duration-100 ease-in-out ${
               isScrolled ? "" : "hover:text-gray-300"
             }`}
             onClick={(e) => {
@@ -184,7 +196,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
           </a>
           <a
             href="#"
-            className={`hover:text-gray-300 ${
+            className={`  py-2 hover:border-t-2 hover:border-b-2 border-[#f2b56b] hover:text-gray-300 transition-all duration-100 ease-in-out ${
               isScrolled ? "" : "hover:text-gray-300"
             }`}
             onClick={(e) => {
@@ -196,7 +208,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
           </a>
           <a
             href="#"
-            className={`hover:text-gray-300 ${
+            className={`  py-2 hover:border-t-2 hover:border-b-2 border-orange-300 hover:text-gray-300 transition-all duration-100 ease-in-out ${
               isScrolled ? "" : "hover:text-gray-300"
             }`}
             onClick={(e) => {
@@ -206,11 +218,8 @@ export const Navbar = ({ scrollToSection, refs }) => {
           >
             Contact
           </a>
+          <Button />
         </nav>
-
-        {/* <button className="btn btn-error text-white py-1 px-6 hidden md:block">
-          My Trips
-        </button> */}
       </div>
     </>
   );

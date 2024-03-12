@@ -1,7 +1,16 @@
 import React from "react";
 import img from "../assets/mainimg.jpg";
+import { useNavigate } from 'react-router-dom';
 
 export const HeroSection = () => {
+
+
+
+  let navigate = useNavigate();
+
+  const navigateToOrderPage = () => {
+    navigate('/about'); // Change '/orderpage' to your order page's path
+  };
   return (
     <div className="relative ">
       {/* Overlay */}
@@ -24,7 +33,7 @@ export const HeroSection = () => {
           Exquisite Chauffeur Services in Over 1,200 Cities Worldwide, Locally
           Connected.
         </p>
-        <button className="btn btn-error text-white btn-md md:btn-lg">
+        <button onClick={navigateToOrderPage} className="btn btn-error text-white btn-md md:btn-lg">
           Book Now
         </button>
       </div>

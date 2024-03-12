@@ -23,7 +23,7 @@ const HomePage = () => {
   return (
     <div className="overflow-x-hidden">
       <Navbar scrollToSection={scrollToSection} refs={{ homeRef, citiesRef, vehiclesRef, servicesRef, aboutRef, contactRef }} />
-      <div className='mt-[110px]' ref={homeRef}><HeroSection /></div>
+      <div className='' ref={homeRef}><HeroSection /></div>
       <div ref={citiesRef}><TechnologySection /></div>
 
       <div ref={vehiclesRef}>

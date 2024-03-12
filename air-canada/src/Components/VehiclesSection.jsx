@@ -1,14 +1,11 @@
-import Sedanimg from "../assets/sedan.jpg";
-import Suvimg from "../assets/suv.jpg";
+
 import Mercedes_van from "../assets/mercedes_van.jpeg";
 import Esclade from "../assets/esclade.jpeg";
 import Navigator from "../assets/navigator_luxury_suv.jpeg";
 import Mercedes_s_class from "../assets/mercedes_s_class.jpeg";
 import Contenental from "../assets/contenental.jpeg";
 import Luxury_sedan_s_class from "../assets/luxury_sedan_s_class.jpeg";
-import Vanimg from "../assets/van.jpg";
-import miniimg from "../assets/mini.png";
-import Busimg from "../assets/bus.jpg";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

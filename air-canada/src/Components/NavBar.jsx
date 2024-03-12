@@ -51,7 +51,7 @@ export const Navbar = ({ scrollToSection, refs }) => {
           isScrolled ? "bg-[#15162C] shadow-md" : "bg-[#15162C] "
         }`}
       >
-        <div className="md:pl-[230px]">
+        <div >
           <img className="h-20" src={sideLogo}></img>
         </div>
 

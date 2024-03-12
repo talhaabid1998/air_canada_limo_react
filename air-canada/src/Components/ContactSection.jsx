@@ -17,17 +17,17 @@ const ContactInfoBox = ({ icon, title, children }) => {
 
 const ContactSection = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[#757778]">
       <div className="container mx-auto px-4 py-10">
         <div className="flex flex-col">
           <div className="flex items-center justify-center my-8">
             <div
-              className="bg-red-500 inline-block"
+              className="bg-[#f2b56b] inline-block"
               style={{ width: "50px", height: "2px" }}
             ></div>
-            <h2 className="mx-4 text-3xl font-bold text-gray-800">Contact</h2>
+            <h2 className="mx-4 text-3xl font-bold text-[#f2b56b]">Contact</h2>
             <div
-              className="bg-red-500 inline-block"
+              className="bg-[#f2b56b] inline-block"
               style={{ width: "50px", height: "2px" }}
             ></div>
           </div>
@@ -87,7 +87,7 @@ const ContactSection = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-red-500 text-white p-3 rounded-lg"
+                    className="w-full bg-[#f2b56b] text-white p-3 rounded-lg"
                   >
                     Send Message
                   </button>

@@ -3,6 +3,7 @@ import PrivateairportIcon from "../assets/plane.png"
 import RoadShows from "../assets/roadshows.png"
 import corporate from "../assets/corporate.png"
 import events from "../assets/events.png"
+import React from "react";
 import accessible from "../assets/access.png"
 
 function ServicesSection() {

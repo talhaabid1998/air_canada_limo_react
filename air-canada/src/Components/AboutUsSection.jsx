@@ -1,5 +1,5 @@
 import hotspot from "../assets/hotspot.png";
-
+import React from "react";
 
 function AboutUsSection() {
   const features = [

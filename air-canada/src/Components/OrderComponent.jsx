@@ -4,7 +4,11 @@ import DatePicker from "react-datepicker";
 import TimePicker from "react-time-picker";
 import "react-datepicker/dist/react-datepicker.css"; // Import the styles
 import "react-time-picker/dist/TimePicker.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+
 import { useState } from "react";
+import MapComponent from "./mapComponent";
 
 const containerStyle = {
   width: "100%",
@@ -87,6 +91,41 @@ const PickupDropoffForm = () => {
     });
     // Send data to server or state management
   };
+
+  const handleLocationClick = (addressType) => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          const geocoder = new window.google.maps.Geocoder();
+          geocoder.geocode(
+            { location: { lat: latitude, lng: longitude } },
+            (results, status) => {
+              if (status === "OK") {
+                if (results[0]) {
+                  const formattedAddress = results[0].formatted_address;
+                  if (addressType === "pickup") {
+                    setPickupAddress(formattedAddress);
+                  } else if (addressType === "dropoff") {
+                    setDropOffAddress(formattedAddress);
+                  }
+                } else {
+                  window.alert("No results found");
+                }
+              } else {
+                window.alert("Geocoder failed due to: " + status);
+              }
+            }
+          );
+        },
+        () => {
+          window.alert("Geolocation failed");
+        }
+      );
+    } else {
+      window.alert("Browser doesn't support Geolocation");
+    }
+  };
   return (
     <div className="flex flex-wrap md:flex-nowrap w-full">
       <div className="flex-grow">
@@ -161,7 +200,6 @@ const PickupDropoffForm = () => {
                   onChange={(e) => setPickupTime(e.target.value)} // Function to handle time change
                   className="input input-bordered w-full pl-10 pr-3 py-2" // Additional class for styling
                 />
-               
               </div>
             </div>
           </div>
@@ -171,40 +209,62 @@ const PickupDropoffForm = () => {
             <label className="label">
               <span className="label-text">Pick-Up Address (Required)</span>
             </label>
-            <input
-              type="text"
-              placeholder="Enter a location"
-              className="input input-bordered w-full"
-            />
+            <div className="input-group relative">
+              <input
+                id="pickup-address"
+                type="text"
+                placeholder="Enter a location"
+                className="input input-bordered w-full pl-10"
+                onChange={(e) => setPickupAddress(e.target.value)}
+                value={pickupAddress}
+              />
+              <button onClick={() => handleLocationClick("pickup")}>
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  className="absolute left-0 top-0 ml-3 mt-3 text-gray-500"
+                />
+              </button>
+            </div>
           </div>
 
           {/* Additional Pick-Up Address */}
-          <div className="form-control">
+          {/* <div className="form-control">
             <label className="cursor-pointer label">
               <span className="label-text">Additional Pick-Up Address</span>
               <input type="checkbox" className="toggle toggle-primary" />
             </label>
-          </div>
+          </div> */}
 
           {/* Drop Off Address */}
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Drop Off Address (Required)</span>
+              <span className="label-text">Drop-off Address (Required)</span>
             </label>
-            <input
-              type="text"
-              placeholder="Enter a location"
-              className="input input-bordered w-full"
-            />
+            <div className="input-group relative">
+              <input
+                id="dropoff-address"
+                type="text"
+                placeholder="Enter a location"
+                className="input input-bordered w-full pl-10"
+                onChange={(e) => setDropOffAddress(e.target.value)}
+                value={dropOffAddress}
+              />
+              <button onClick={() => handleLocationClick("dropoff")}>
+                <FontAwesomeIcon
+                  icon={faMapMarkerAlt}
+                  className="absolute left-0 top-0 ml-3 mt-3 text-gray-500"
+                />
+              </button>
+            </div>
           </div>
 
           {/* Additional Drop off */}
-          <div className="form-control">
+          {/* <div className="form-control">
             <label className="cursor-pointer label">
               <span className="label-text">Additional Drop off</span>
               <input type="checkbox" className="toggle toggle-primary" />
             </label>
-          </div>
+          </div> */}
 
           {/* Airline Name & Flight Number */}
           <div className="form-control">
@@ -327,17 +387,10 @@ const PickupDropoffForm = () => {
         {/* Personal Information Section */}
       </div>
       <div className="w-full md:w-1/2 h-screen">
-        <LoadScript
-          googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY" // Replace with your Google Maps API key
-        >
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={10}
-          >
-            {/* Child components, such as markers, info windows, etc. */}
-          </GoogleMap>
-        </LoadScript>
+        <MapComponent
+          pickupLocation={pickupAddress}
+          dropoffLocation={dropOffAddress}
+        />
       </div>
     </div>
   );
